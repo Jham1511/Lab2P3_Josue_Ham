@@ -4,13 +4,20 @@
 using namespace std;
 
 int random() {
-	srand(time(NULL));
-	int aleatorio = 97+rand()%(123-97);
-	cout << "Generado: " << aleatorio << endl;
-	cout << "Generado char: " << (char)aleatorio;
+	int aleatorio = 97 + rand() % (123 - 97);
 	return aleatorio;
 }
+void arreglo_Inicial() {
+	int array[10];
+	cout << "Arreglo inicial: ";
+	for (int i = 0; i < 10; i++)
+	{
+		array[i] = random();
+		cout << "[" << (char)array[i] << "]";
+	}
 
+
+}
 //Metodos ejercicio 2
 int Factorial(int numero) {
 		if (numero == 0)
@@ -52,11 +59,13 @@ int menu() {
 }
 int main()
 {
+	srand(time(NULL));
 	int respuesta= menu();
 	while (respuesta !=3){
 		switch (respuesta) {
-		case 1: {
-			random();
+		case 1: {	
+			arreglo_Inicial();
+
 		}
 			  break;
 		case 2: {
