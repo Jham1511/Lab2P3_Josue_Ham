@@ -23,7 +23,7 @@ void arreglos() {
 
 	for (int k = 0; k < 10; k++)
 	{
-		if (array[k] != array[k+1])
+		if (array[k + 1] != array[k])
 		{
 			arregloFinal[k] = array[k];
 		}
@@ -46,7 +46,10 @@ void arreglos() {
 
 	for (int l = 0; l < 10; l++)
 	{
-		cout << "[" << (char)arregloFinal[l] << "]";
+		if (arregloFinal[l] != arregloFinal[l+1])
+		{
+			cout << "[" << (char)arregloFinal[l] << "]";
+		}
 	}//Solo imprime
 }
 //Metodos ejercicio 2
