@@ -1,6 +1,17 @@
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
 using namespace std;
 
+int random() {
+	srand(time(NULL));
+	int aleatorio = 97+rand()%(123-97);
+	cout << "Generado: " << aleatorio << endl;
+	cout << "Generado char: " << (char)aleatorio;
+	return aleatorio;
+}
+
+//Metodos ejercicio 2
 int Factorial(int numero) {
 		if (numero == 0)
 		{
@@ -9,7 +20,6 @@ int Factorial(int numero) {
 		else {
 			return numero * (numero - 1);
 		}
-	
 }
 void figura(int tam) {
 	for (int i = 0; i < tam; i++)
@@ -46,7 +56,7 @@ int main()
 	while (respuesta !=3){
 		switch (respuesta) {
 		case 1: {
-
+			random();
 		}
 			  break;
 		case 2: {
