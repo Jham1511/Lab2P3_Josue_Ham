@@ -1,18 +1,37 @@
 #include <iostream>
 using namespace std;
+
+int Factorial(int numero) {
+		if (numero == 0)
+		{
+			return 1;
+		}
+		else {
+			return numero * (numero - 1);
+		}
+	
+}
 void figura(int tam) {
 	for (int i = 0; i < tam; i++)
 	{
 		for (int j = 0; j < tam; j++)
 		{
-			if (i == tam - 1) cout << "*";
-			if (j == 0) cout << "*" << endl;
-			if (j <= i) cout << "*";
+			if (i == tam - 1)
+			{
+				cout << "*";
+			}
+			else if(j == 0) {
+				cout << "*";
+			} else if (j <= i){
+				cout << "*";
+			}
 		}
+		printf("\n");
 	}
 }
+//Metodo del menu pricinpal, retorna la opcion
 int menu() {
-	cout << "Menu del Programa" << endl
+	cout << "\nMenu del Programa" << endl
 		<< "1 -> Ejercicio 1" << endl
 		<< "2 -> Ejercicio 2" << endl
 		<< "3 -> Salir" << endl
@@ -30,10 +49,25 @@ int main()
 
 		}
 			  break;
-		}
 		case 2: {
-
+			cout << "Ingrese un numero entero: ";
+			int numero;
+			cin >> numero;
+			if (numero > 0)
+			{	
+				int fact;
+				fact = Factorial(numero);
+				cout << "El factorial de " << numero << " es de: " << fact;
+				printf("\n");
+				printf("\n");
+				figura(fact);
+			}
+			else {
+				cout << "El numero ingresado no es valido";
+			}
 		}
 			  break;
+		}//Fin del switch
+		respuesta = menu();
 	}//Fin del while
 }
